@@ -1,3 +1,20 @@
 @import "tailwindcss";
 
 @source "../**/*.{astro,html,js,jsx,md,mdx,ts,tsx}";
+
+@font-face {
+  font-family: 'BubbleFont';
+  src: url('/fonts/BubblegumBliss.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* This creates the 'font-custom' class */
+  --font-bubble: "BubbleFont", sans-serif;
+}
+
+body {
+    @apply font-bubble;
+}
