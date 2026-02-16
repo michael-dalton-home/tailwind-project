@@ -1,0 +1,47 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+// src/pages/blog/[slug].astro
+export async function getStaticPaths() {
+  return [
+    { 
+        params: { slug: 'post-one' }, 
+        props: { title: 'Hello World', 
+            content: `Welcome to the first entry of the Mane Event! If you’ve ever wondered why cartoon ponies look so smooth even on a 4K screen, the secret is Vector Art. Unlike standard photos that get pixelated when you zoom in, vectors use mathematical paths to stay crisp forever.` }
+    },
+    { 
+        params: { slug: 'post-two' }, 
+        props: { title: 'Tailwind is Great', content: `Stay tuned as we gallop through tutorials on mane physics, eye-highlighting techniques, and how to stay inspired when you're facing 'Artist's Block' (or as we call it, 'The Great Stalling'). Thanks for joining the herd!"
+` }  
+    },
+  ];
+}
+
+const { slug } = Astro.params;
+const { title, content } = Astro.props;
+---
+<MainLayout title={title}>
+  <h1>Viewing post: {slug}</h1>
+
+<div class="card w-[calc(100%-40px)] mx-auto my-5 bg-base-100 card-lg shadow-sm bg-primary text-primary-content">
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <p>{content}</p>
+    <div class="justify-end card-actions">
+    </div>
+  </div>
+</div>
+
+<!-- 
+  <article class="max-w-3xl mx-auto py-20 px-6">
+    <h1 class="font-custom text-5xl mb-8 text-white">{title}</h1>
+    <div class="prose prose-invert lg:prose-xl">
+      <p>{content}</p>
+      <p class="text-white/50 italic">Currently viewing the "{slug}" page.</p>
+    </div>
+    
+    <a href="/blog" class="inline-block mt-10 text-red-500 hover:underline">
+      ← Back to Blog
+    </a>
+  </article> -->
+</MainLayout>

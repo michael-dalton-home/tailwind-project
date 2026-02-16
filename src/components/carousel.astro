@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets'; 
+import PonyOne from '/imgs/47036.jpg';
+import PonyTwo from '/imgs/61549.jpg';
+import PonyThree from '/imgs/146203-OTY7WS-35.jpg';
+import PonyFour from '/imgs/351537-PB1HCU-549.jpg';
+
+---
+
+
+<div class="carousel carousel-vertical rounded-box md:flex">
+  <div class="carousel-item">
+    <Image src={PonyOne} alt="Carousel pony image" class="w-510 aspect-square object-cover"/>
+  </div>
+  <div class="carousel-item">
+    <Image src={PonyTwo} alt="Carousel pony image" class="w-510 aspect-square object-cover"/>
+  </div>
+  <div class="carousel-item">
+    <Image src={PonyThree} alt="Carousel pony image" class="w-510 aspect-square object-cover"/>
+  </div>
+  <div class="carousel-item">
+    <Image src={PonyFour} alt="Carousel pony image" class="w-510 aspect-square object-cover"/>
+  </div>
+</div>
